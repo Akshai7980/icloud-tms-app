@@ -1,0 +1,7 @@
+
+  // getDeviceScreenSize() {
+  //   this.common.platform.ready().then(() => {
+  //     console.log("Width: " + this.common.platform.width());
+  //     console.log("Height: " + this.common.platform.height());
+  //   });
+  // }

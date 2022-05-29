@@ -1,0 +1,20 @@
+ion-checkbox {
+    --background-checked: #570FEF;
+    --checkmark-width: 3px;
+    --border-color-checked: dimgrey;
+    margin-right: 15px;
+    opacity: unset !important;
+}
+
+ion-item {
+    --ripple-color: transparent;
+}
+
+ion-label {
+    opacity: unset !important;
+}
+
+p{
+    color: #606060;
+    font-family: 'Poppins_Regular';
+}

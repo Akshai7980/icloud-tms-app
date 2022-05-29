@@ -1,0 +1,105 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button>
+                <img src="../../assets/images/app-button/menu.svg" alt="">
+            </ion-menu-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <img src="../../assets/images/app-button/back.svg" alt="" (click)="this.common.navCtrl.back()">
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-header class="ion-no-border">
+
+    <div style="text-align: center; position: relative; top: 35px;">
+        <img src="../../assets/images/app-images/full-truck.svg" alt="">
+        <img src="../../assets/images/app-images/man.svg" alt="" style="position: relative;
+        right: 15px;">
+    </div>
+    <div style="position: absolute;
+    top: 40%;
+    right: 35%;
+    display: grid;">
+        <img src="../../assets/images/text-img/Confirm.svg" alt="" style="margin-left: 5px;
+        height: 16px;">
+        <img src="../../assets/images/text-img/Delivery.svg" alt="" style="height: 22px;">
+    </div>
+    <img src="../../assets/images/app-images/road.svg" alt="" style="width: inherit;">
+</ion-header>
+
+<ion-content>
+
+    <ion-card style="border-radius: 10px; box-shadow: rgb(0 0 0 / 20%) 0px 0px 5px 0px, rgb(0 0 0 / 14%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 1px 5px 0px;">
+        <h4 style="text-align: center; color: #570FEF;">Confirm Delivery</h4>
+        <div style="padding: 20px;">
+            <p>Select Date Time</p>
+            <ion-item lines="none" style="--background: rgba(87, 15, 239, 0.1);
+            border-radius: 10px;">
+                <img src="../../assets/icon/date.svg" alt="" slot="start">
+                <ion-input placeholder="Choose date and time" id="open-modal" [readonly]="true" [value]="this.today | date:'medium' "></ion-input>
+            </ion-item>
+
+            <ion-modal trigger="open-modal">
+                <ng-template>
+                  <ion-content>
+                    <ion-datetime presentation="time-date" (ionChange)="doSomething($event)">
+                      <div slot="title"></div>
+                    </ion-datetime>
+                  </ion-content>
+                </ng-template>
+              </ion-modal>
+
+            <p>Notes</p>
+            <ion-item lines="none" style="--background: rgba(87, 15, 239, 0.1);
+            border-radius: 10px;">
+                <ion-textarea placeholder="Write your comments here..." autocapitalize="true" autoGrow="true" [(ngModel)]="comments"></ion-textarea>
+            </ion-item>
+
+            <ion-item lines="none">
+                <img src="../../assets/icon/upload.svg" alt="">
+                <div>
+                    <!-- <ion-input type="file" style="position: absolute;
+                    opacity: 0;" accept="image/*;" capture="camera" multiple="true" (change)="onChange($event)"></ion-input> -->
+                            <!-- <p style="margin-left: 7px;" (click)="pickImage(this.camera.PictureSourceType.CAMERA)">Upload documents</p> -->
+                            <p style="margin-left: 7px;" (click)="scanDoc()">Upload documents</p>
+            </div>
+            </ion-item>
+
+            <div id="open-modal-image">
+                <ol style="padding: 0px 0px 0px 15px;
+                margin: 0px 0px;" *ngIf="this.base64textString !== '' ">
+                    <li style="margin-bottom: 5px;
+                    background-color: #eee6fe;
+                    padding: 10px;
+                    border-radius: 15px;">
+                         {{ this.tripDetails?.SystemLoadNumber+'.jpeg' }}
+                         <!-- <ion-icon name="close-circle-outline" style="float: right;
+                         color: black;
+                         font-size: 1.5rem;
+                         position: relative;
+                         bottom: 4px;"></ion-icon> -->
+                        </li>
+                </ol>
+            </div>
+
+            <ion-modal trigger="open-modal-image" style="--width: 90%;
+            --height: 85%;
+            --border-radius: 10px;">
+                <ng-template>
+                  <ion-content>
+                    <div>
+                        <img [src]="'data:image/jpeg;base64,' + this.base64textString" alt="" style="border-radius: 10px;">
+                    </div>
+                  </ion-content>
+                </ng-template>
+              </ion-modal>
+
+            <div style="text-align: center;">
+                <ion-button shape="round" style="text-transform: none; --background: #570FEF; --box-shadow: 0px;" (click)="gotoPage()">Confirm Delivery</ion-button>
+            </div>
+        </div>
+    </ion-card>
+
+</ion-content>

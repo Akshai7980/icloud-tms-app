@@ -1,0 +1,28 @@
+ion-button {
+    --background: rgba(87, 15, 239, 0.1);
+    --color: black;
+    --box-shadow: none;
+}
+
+ion-segment-button {
+    font-size: x-small;
+    text-transform: none;
+    --color-checked: black;
+}
+
+ion-popover {
+    --width: 115px !important;
+}
+
+ion-modal {
+    --width: 80%;
+    --height: 55%;
+    --border-radius: 10px;
+}
+
+ion-input {
+    --background: #eee6fe;
+    border-radius: 7px;
+    margin-right: 5px;
+    font-size: 13px;
+}

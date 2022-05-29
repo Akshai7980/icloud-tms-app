@@ -1,0 +1,60 @@
+                    <!-- <p style="margin: 7px 0px; color: #0A5C49; font-size: small;
+    font-weight: bold;" *ngIf="p?.Status === 4"> LOAD COMPLETED </p> -->
+                    <!-- <p style="margin: 7px 0px; color: #0A5C49; font-size: small;
+                    font-weight: bold;" *ngIf="p?.Status === 5"> LOAD COMPLETED </p>
+                    <p style="margin: 7px 0px; color: #0A5C49; font-size: small;
+                    font-weight: bold;" *ngIf="p?.Status === 6"> FACTORING GENERATED </p>
+                    <p style="margin: 7px 0px; color: #0A5C49; font-size: small;
+                    font-weight: bold;" *ngIf="p?.Status === 7"> FACTORING PAID </p>
+                    <p style="margin: 7px 0px; color: #0A5C49; font-size: small;
+                    font-weight: bold;" *ngIf="p?.Status === 8"> FACTORING REJECTED </p>
+                    <p style="margin: 7px 0px; color: #0A5C49; font-size: small;
+                    font-weight: bold;" *ngIf="p?.Status === 9"> LOAD TONU </p>
+                    <p style="margin: 7px 0px; color: #0A5C49; font-size: small;
+                    font-weight: bold;" *ngIf="p?.Status === 10"> LOAD LUMPER FEES </p>
+                    <p style="margin: 7px 0px; color: #0A5C49; font-size: small;
+                    font-weight: bold;" *ngIf="p?.Status === 11"> LOAD DETENTION </p>
+                    <p style="margin: 7px 0px; color: #0A5C49; font-size: small;
+                    font-weight: bold;" *ngIf="p?.Status === 12"> LOAD CANCELLED </p>
+                    <p style="margin: 7px 0px; color: #0A5C49; font-size: small;
+                    font-weight: bold;" *ngIf="p?.Status === 13"> LOAD TRANSIENT </p>
+                    <p style="margin: 7px 0px; color: #0A5C49; font-size: small;
+                    font-weight: bold;" *ngIf="p?.Status === 14"> LOAD PICKED UPLOAD DOCUMENT </p>
+                    <p style="margin: 7px 0px; color: #0A5C49; font-size: small;
+                    font-weight: bold;" *ngIf="p?.Status === 15"> LOAD PICKED UPLOAD DOCUMENT REJECTED </p>
+                    <p style="margin: 7px 0px; color: #0A5C49; font-size: small;
+                    font-weight: bold;" *ngIf="p?.Status === 16"> LOAD PICKED UPLOAD DOCUMENT APPROVED </p>
+                    <p style="margin: 7px 0px; color: #0A5C49; font-size: small;
+                    font-weight: bold;" *ngIf="p?.Status === 17"> LOAD DELIVERED UPLOAD DOCUMENT </p>
+                    <p style="margin: 7px 0px; color: #0A5C49; font-size: small;
+                    font-weight: bold;" *ngIf="p?.Status === 18"> LOAD DELIVERED UPLOAD DOCUMENT REJECTED </p>
+                    <p style="margin: 7px 0px; color: #0A5C49; font-size: small;
+                    font-weight: bold;" *ngIf="p?.Status === 19"> LOAD DELIVERED UPLOAD DOCUMENT APPROVED </p>
+                    <p style="margin: 7px 0px; color: #0A5C49; font-size: small;
+                    font-weight: bold;" *ngIf="p?.Status === 20"> LOAD PICKED LOCATION ARRIVED </p>
+                    <p style="margin: 7px 0px; color: #0A5C49; font-size: small;
+                    font-weight: bold;" *ngIf="p?.Status === 21"> LOAD PICKED </p>
+                    <p style="margin: 7px 0px; color: #0A5C49; font-size: small;
+                    font-weight: bold;" *ngIf="p?.Status === 22"> LOAD DELIVERY LOCATION ARRIVED </p>
+                    <p style="margin: 7px 0px; color: #0A5C49; font-size: small;
+                    font-weight: bold;" *ngIf="p?.Status === 23"> LOAD DELIVERED </p> -->
+------------------------------------------------------------------------------------------------------
+
+                                <!-- <div style="background: #FFFFFF;
+            box-shadow: 0px 0px 10px rgb(0 0 0 / 15%);
+            border-radius: 10px;
+            padding: 7px; display: flex; align-items: center; justify-content: space-between; margin-top: 8px;">
+                <div>
+                    <h6 style="margin: 7px 0px; color: #570FEF;">123456</h6>
+                    <p style="margin: 7px 0px;">This is note for payroll</p>
+                    <p style="margin: 7px 0px; color: #FF8E00;">Pending</p>
+                </div>
+                <div>
+                    <h4 style="margin: 7px 0px; color: #570FEF;">$600.00/-</h4>
+                </div>
+            </div> -->
+------------------------------------------------------------------------------------------------------
+                    <!-- <p style="margin: 7px 0px; color: #0A5C49; font-size: small;
+                    font-weight: bold;" *ngIf="p?.Status === 2"> LOAD REJECTED </p> -->
+------------------------------------------------------------------------------------------------------
+                            <!-- <ion-label style="margin-left: 10px;">New</ion-label> -->

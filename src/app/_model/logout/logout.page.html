@@ -1,0 +1,25 @@
+<ion-content>
+  <div style="text-align: center; padding: 15px">
+    <h5 style="color: #570fef">LOGOUT</h5>
+    <p>Are you sure, you want to logout?</p>
+    <div
+      style="
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 30px;
+      "
+    >
+      <ion-button
+        shape="round"
+        fill="clear"
+        id="yes"
+        (click)="userClicked('YES')"
+        >Yes</ion-button
+      >
+      <ion-button shape="round" id="no" (click)="userClicked('No')"
+        >No</ion-button
+      >
+    </div>
+  </div>
+</ion-content>

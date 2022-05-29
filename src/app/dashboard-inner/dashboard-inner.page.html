@@ -1,0 +1,112 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button>
+                <img src="../../assets/images/app-button/menu.svg" alt="">
+            </ion-menu-button>
+        </ion-buttons>
+        <ion-title> Dashboard </ion-title>
+        <ion-buttons slot="end">
+            <img src="../../assets/images/app-button/back.svg" alt="" (click)="this.common.navCtrl.back()">
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding="true" [fullscreen]="true">
+    <div style="padding: 10px;">
+        <h6>Total Earning Report</h6>
+
+        <div style="display: flex; align-items: center">
+            <ion-input placeholder="From Date" id="open-from-modal" [readonly]="true" [value]="this.fromDate | date:'mediumDate' " (ionChange)="onDateChoose($event)"></ion-input>
+            <ion-input placeholder="To Date" id="open-to-modal" [readonly]="true" [value]="this.toDate | date:'mediumDate' " (ionChange)="onDateChoose($event)"></ion-input>
+            <ion-button shape="round" (click)="presentPopover($event)">weekly
+                <ion-icon name="chevron-down-outline"></ion-icon>
+            </ion-button>
+        </div>
+
+        <ion-modal trigger="open-from-modal" [swipeToClose]="true">
+            <ng-template>
+              <ion-content>
+                <ion-datetime presentation="date" (ionChange)="doSomething($event, 'FROM')">
+                  <div slot="title"> Choose From Date </div>
+                </ion-datetime>
+              </ion-content>
+            </ng-template>
+          </ion-modal>
+
+          <ion-modal trigger="open-to-modal">
+            <ng-template>
+              <ion-content>
+                <ion-datetime presentation="date" (ionChange)="doSomething($event, 'TO')">
+                  <div slot="title"> Choose To Date </div>
+                </ion-datetime>
+              </ion-content>
+            </ng-template>
+          </ion-modal>
+
+        <ion-text style="color: #676767;
+        font-size: 12px;">Note: By default weekly report</ion-text>
+
+        <ion-segment [(ngModel)]="segment" (ionChange)="segmentChanged($event, segment)" style="margin-top: 10px;">
+            <ion-segment-button value="payroll-detail" style="background: #eee6fe;">
+                <ion-label> payroll Detail</ion-label>
+            </ion-segment-button>
+            <!-- <ion-segment-button value="payroll-consolidate">
+                <ion-label> payroll Consolidate</ion-label>
+            </ion-segment-button> -->
+            <ion-segment-button value="payroll-grouped-status" style="background: #eee6fe;">
+                <ion-label> payroll Grouped Status</ion-label>
+            </ion-segment-button>
+        </ion-segment>
+
+        <div [ngSwitch]="segment">
+            <div *ngSwitchCase="'payroll-detail'" style="margin-top: 25px;">
+                <div style="display: flex; align-items: center;">
+                    <ion-icon name="ellipse" style="color: #570FEF; margin-right: 7px;"></ion-icon>
+                    <p style="margin: 5px;">Total Earning</p>
+                </div>
+                <div style="padding: 10px;
+                box-shadow: 1px 1px 5px 2px lightgrey;
+                margin: 20px 10px 10px 10px;
+                border-radius: 7px;">
+                    <canvas #payrollDetail></canvas>
+                </div>
+            </div>
+
+            <div *ngSwitchCase="'payroll-consolidate'" style="margin-top: 25px;">
+                <div style="display: flex; align-items: center;">
+                    <ion-icon name="ellipse" style="color: #0A5C49; margin-right: 7px;"></ion-icon>
+                    <p style="margin: 5px;">Total Earning</p>
+                </div>
+                <div style="padding: 10px;
+                box-shadow: 1px 1px 5px 2px lightgrey;
+                margin: 20px 10px 10px 10px;
+                border-radius: 7px;">
+                    <canvas #payrollConsolidate></canvas>
+                </div>
+            </div>
+
+            <div *ngSwitchCase="'payroll-grouped-status'" style="margin-top: 25px;">
+                <div style="display: grid;
+                justify-content: end;">
+                    <div style="display: flex; align-items: center;">
+                        <ion-icon name="ellipse" style="color: #FFBB0B; margin-right: 7px;"></ion-icon>
+                        <p style="margin: 5px;">Paid</p>
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                        <ion-icon name="ellipse" style="color: #152BED; margin-right: 7px;"></ion-icon>
+                        <p style="margin: 5px;">Pending</p>
+                    </div>
+                </div>
+
+                <div style="padding: 10px;
+                box-shadow: 1px 1px 5px 2px lightgrey;
+                margin: 20px 10px 10px 10px;
+                border-radius: 7px;">
+                    <canvas #payrollGrouped></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</ion-content>

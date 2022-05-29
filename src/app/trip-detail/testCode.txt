@@ -1,0 +1,120 @@
+        <!-- <ion-item lines="none" style="--ripple-color: transparent;">
+            <ion-checkbox mode="ios" slot="start" disabled="true"></ion-checkbox>
+            <ion-label style="opacity: unset;">Lumber Fees</ion-label>
+        </ion-item>
+        <ion-item lines="none" style="--ripple-color: transparent;">
+            <ion-checkbox mode="ios" slot="start" disabled="true"></ion-checkbox>
+            <ion-label style="opacity: unset;">Detention</ion-label>
+        </ion-item>
+        <ion-item lines="none" style="--ripple-color: transparent;">
+            <ion-checkbox mode="ios" slot="start" disabled="true"></ion-checkbox>
+            <ion-label style="opacity: unset;">Cancelled</ion-label>
+        </ion-item> -->
+
+
+
+
+        <!-- <div class="wrapper">
+  <ul class="StepProgress">
+    <li class="StepProgress-item">
+      <div [style]="this.tripDetails.Status === 5 ? 'border-bottom-style: dashed; border-bottom-color: lightgrey;' : '' " style="display: flex;
+      align-items: center;
+      padding: 7px;">
+          <div>
+              <h6 style="margin: 0px; font-family: 'Poppins_Regular';">Pick Up Address:</h6>
+              <p style="margin: 0px; font-size: 15px;
+              line-height: 18px;"> {{ this.tripDetails?.PickUpAddress }} </p>
+              <p style="margin: 0px; font-size: 15px;
+              line-height: 18px;"> {{ this.tripDetails?.PickUpCity }} </p>
+          </div>
+      </div>
+    </li>
+    <li class="StepProgress-item">
+      <div *ngIf="this.tripDetails?.Status === 5" style="display: flex;
+      align-items: center;
+      padding: 7px;">
+          <div>
+              <h6 style="margin: 0px; font-family: 'Poppins_Regular';">Drop Off Address:</h6>
+              <p style="margin: 0px; font-size: 15px;
+              line-height: 18px;"> {{ this.tripDetails?.DropOffAddress }} </p>
+              <p style="margin: 0px; font-size: 15px;
+              line-height: 18px;"> {{ this.tripDetails?.DropOffCity }} </p>
+          </div>
+      </div>
+    </li>
+  </ul>
+  </div> -->
+
+
+
+          <!-- <ion-item lines="none" style="--ripple-color: transparent;">
+            <ion-checkbox mode="ios" slot="start" disabled="true"></ion-checkbox>
+            <ion-label style="opacity: unset;">Complete</ion-label>
+        </ion-item> -->
+
+
+                <!-- <ion-item lines="none" style="--ripple-color: transparent;">
+            <ion-checkbox mode="ios" slot="start" disabled="true"></ion-checkbox>
+            <ion-label style="opacity: unset;">Detention</ion-label>
+        </ion-item>
+        <ion-item lines="none" style="--ripple-color: transparent;">
+            <ion-checkbox mode="ios" slot="start" disabled="true"></ion-checkbox>
+            <ion-label style="opacity: unset;">Cancelled</ion-label>
+        </ion-item>
+        <ion-item lines="none" style="--ripple-color: transparent;">
+            <ion-checkbox mode="ios" slot="start" disabled="true"></ion-checkbox>
+            <ion-label style="opacity: unset;">Payroll</ion-label>
+        </ion-item>
+        <ion-item lines="none" style="--ripple-color: transparent;">
+            <ion-checkbox mode="ios" slot="start" disabled="true"></ion-checkbox>
+            <ion-label style="opacity: unset;">Complete</ion-label>
+        </ion-item> -->
+
+
+
+                <!-- <ion-item lines="none" style="--ripple-color: transparent;">
+            <ion-checkbox mode="ios" slot="start" disabled="true"></ion-checkbox>
+            <ion-label style="opacity: unset;">Cancelled</ion-label>
+        </ion-item>
+        <ion-item lines="none" style="--ripple-color: transparent;">
+            <ion-checkbox mode="ios" slot="start" disabled="true"></ion-checkbox>
+            <ion-label style="opacity: unset;">Payroll</ion-label>
+        </ion-item>
+        <ion-item lines="none" style="--ripple-color: transparent;">
+            <ion-checkbox mode="ios" slot="start" disabled="true"></ion-checkbox>
+            <ion-label style="opacity: unset;">Complete</ion-label>
+        </ion-item> -->
+
+
+                <!-- <ion-item lines="none" style="--ripple-color: transparent;">
+            <ion-checkbox mode="ios" slot="start" disabled="true"></ion-checkbox>
+            <ion-label style="opacity: unset;">Payroll</ion-label>
+        </ion-item>
+        <ion-item lines="none" style="--ripple-color: transparent;">
+            <ion-checkbox mode="ios" slot="start" disabled="true"></ion-checkbox>
+            <ion-label style="opacity: unset;">Complete</ion-label>
+        </ion-item> -->
+
+
+
+
+                <!-- <ion-item lines="none" style="--ripple-color: transparent;">
+            <ion-checkbox mode="ios" slot="start" disabled="true"></ion-checkbox>
+            <ion-label style="opacity: unset;">Lumber Fees</ion-label>
+        </ion-item>
+        <ion-item lines="none" style="--ripple-color: transparent;">
+            <ion-checkbox mode="ios" slot="start" disabled="true"></ion-checkbox>
+            <ion-label style="opacity: unset;">Detention</ion-label>
+        </ion-item>
+        <ion-item lines="none" style="--ripple-color: transparent;">
+            <ion-checkbox mode="ios" slot="start" disabled="true"></ion-checkbox>
+            <ion-label style="opacity: unset;">Cancelled</ion-label>
+        </ion-item>
+        <ion-item lines="none" style="--ripple-color: transparent;">
+            <ion-checkbox mode="ios" slot="start" disabled="true"></ion-checkbox>
+            <ion-label style="opacity: unset;">Payroll</ion-label>
+        </ion-item>
+        <ion-item lines="none" style="--ripple-color: transparent;">
+            <ion-checkbox mode="ios" slot="start" disabled="true"></ion-checkbox>
+            <ion-label style="opacity: unset;">Complete</ion-label>
+        </ion-item> -->

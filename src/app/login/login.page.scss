@@ -1,0 +1,126 @@
+.main-container {
+  margin-top: 15%;
+  padding: 30px;
+
+  .logo-container {
+    text-align: center;
+    margin-bottom: 50px;
+
+    img {
+      height: 90px;
+    }
+  }
+
+  ion-item {
+    --background: rgba(87, 15, 239, 0.1);
+    border-radius: 30px;
+    margin-bottom: 20px;
+
+    ion-icon {
+      color: #570fef;
+    }
+
+    ion-input {
+      font-size: 13px;
+      font-family: "Poppins_Medium";
+    }
+  }
+
+  .remember-me-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 15px;
+
+    .remember-me-inner {
+      display: flex;
+      align-items: center;
+
+      ion-checkbox {
+        --border-color: #570fef;
+        --border-color-checked: #570fef;
+        --background-checked: #feab1a;
+        --size: 1rem;
+      }
+
+      p {
+        color: #ff8e00;
+        font-size: 13px;
+        margin-left: 10px;
+        font-family: "Poppins_Medium";
+      }
+    }
+  }
+
+  .login-button-container {
+    text-align: center;
+
+    ion-button {
+      text-transform: none;
+      --background: #570fef;
+      --box-shadow: 0px;
+      height: 45px;
+      color: white;
+      font-family: "Poppins_Medium";
+
+      ion-label {
+        font-family: "Poppins_Medium";
+
+        .spinner-container {
+          display: flex;
+          align-items: center;
+
+          ion-spinner {
+            --color: white;
+            margin-right: 20px;
+          }
+        }
+      }
+    }
+
+    p {
+      color: #ff8e00;
+      font-size: 13px;
+      font-family: "Poppins_Medium";
+    }
+  }
+}
+
+.version-container {
+  text-align: center;
+
+  ion-note {
+    font-size: 13px;
+    font-family: "Poppins_Medium";
+  }
+}
+
+.footer-img-container {
+  text-align: center;
+  position: relative;
+  top: 35px;
+
+  .man-img {
+    position: relative;
+    right: 15px;
+  }
+}
+
+.footer-text-container {
+  position: absolute;
+  top: 40%;
+  right: 35%;
+
+  h4 {
+    color: #570fef;
+    position: relative;
+    bottom: 13px;
+    font-size: 13px;
+    font-family: "Poppins_Medium";
+    right: 15px;
+  }
+}
+
+.road-img {
+  width: 100%;
+}

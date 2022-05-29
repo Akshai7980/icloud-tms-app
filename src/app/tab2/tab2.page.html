@@ -1,0 +1,108 @@
+<ion-header [translucent]="true" class="ion-no-border">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button>
+                <img src="../../assets/images/app-button/menu.svg" alt="">
+            </ion-menu-button>
+        </ion-buttons>
+        <ion-title> Notification </ion-title>
+        <ion-buttons slot="end">
+            <img src="../../assets/images/app-button/back.svg" alt="" (click)="this.common.navCtrl.back()">
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-header class="ion-no-border">
+    <ion-searchbar placeholder="search by notification content" [formControl]="searchControl" (ionInput)="searchInput($event)"></ion-searchbar>
+</ion-header>
+
+<ion-content>
+
+    <div *ngIf="searching">
+        <ion-spinner></ion-spinner>
+      </div>
+
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+    <div style="margin: 10px;">
+
+        <div *ngIf="this.notifications?.length === 0">
+            <div class="ion-padding custom-skeleton" *ngFor="let s of skeleton;" style="border: 1px solid lightgrey;
+            margin: 10px;
+            border-radius: 7px;">
+                <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+                <ion-skeleton-text animated></ion-skeleton-text>
+                <ion-skeleton-text animated style="width: 88%"></ion-skeleton-text>
+                <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
+                <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+            </div>
+        </div>
+
+        <!-- <p style="font-family: 'Poppins_Regular';
+        margin: 0px;" *ngIf="this.notifications?.length !== 0">New</p> -->
+        <div *ngFor="let n of notifications" class="animate__animated animate__fadeIn" (click)="presentNotificationModal(n)">
+            <div *ngIf="n?.readStatus === 1" style="background: #9e9e9e66;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 5px;
+            margin-bottom: 10px;">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <div style="display: flex;">
+                        <div style=" margin-left: 10px;">
+                            <ion-icon name="ellipse" *ngIf="n?.readStatus === 1"></ion-icon>
+                        </div>
+                        <p style="margin: 0px; font-size: 15px; font-family: 'Poppins_Regular'; margin-left: 5px;"> {{ n?.userName }} </p>
+                    </div>
+                    <div>
+                        <p style="margin: 0px; font-size: 15px; display: flex; align-items: center;">
+                          <ion-icon name="time-outline" style="color: gray;
+                          font-size: 15px;
+                          margin-right: 5px;"></ion-icon>
+                            <!-- <img src="../../assets/icon/clock.png" alt="" style="margin: 0px 3px;"> -->
+                            <span> {{ n?.createdDate | date }} </span>
+                        </p>
+
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <p style="margin: 0px; margin-left: 25px; font-size: 15px; margin-top: 10px"> {{ n?.notes}} </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <p style="font-family: 'Poppins_Regular';
+        margin: 0px;" *ngIf="this.notifications?.length !== 0">Earlier</p> -->
+        <div *ngFor="let n of notifications;" (click)="presentNotificationModal(n)">
+            <div *ngIf="n?.readStatus !== 1" style="background: #F3F3F3;
+            border-radius: 10px; padding: 10px;
+        margin: 5px;">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <div style="display: flex; align-items: center;">
+                        <p style="margin: 0px; font-size: 15px; font-family: 'Poppins_Regular'; margin-left: 5px;"> {{ n?.userName }} </p>
+                    </div>
+                    <div>
+                        <p style="margin: 0px; font-size: 15px; display: flex; align-items: center;">
+                          <ion-icon name="time-outline" style="color: gray;
+                          font-size: 15px;
+                          margin-right: 5px;"></ion-icon>                            <span> {{ n?.createdDate | date }} </span>
+                        </p>
+
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <p style="margin: 0px;
+                        margin-left: 5px;
+                        font-size: 15px;
+                        margin-top: 5px;"> {{ n?.notes }} </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</ion-content>

@@ -1,0 +1,165 @@
+        <!-- <div style="display: flex; width: 80px;" *ngIf="t?.Status === 1">
+            <div>
+                <ion-icon name="ellipse" style="font-size: 12px;
+                margin-right: 3px;"></ion-icon>
+            </div>
+            <span style="font-size: 12px; font-family: 'Poppins_Regular';">Not Assigned</span>
+        </div>
+
+        <div style="display: flex; width: 80px; color: #C71F16;" *ngIf="t?.Status === 2">
+            <div>
+                <ion-icon name="ellipse" style="font-size: 12px;
+                margin-right: 3px;"></ion-icon>
+            </div>
+            <span style="font-size: 12px; font-family: 'Poppins_Regular';">Rejected</span>
+        </div>
+
+        <div style="display: flex; width: 80px;" *ngIf="t?.Status === 3">
+            <div>
+                <ion-icon name="ellipse" style="font-size: 12px;
+                margin-right: 3px;"></ion-icon>
+            </div>
+            <span style="font-size: 12px; font-family: 'Poppins_Regular';">Assigned</span>
+        </div> -->
+
+
+
+
+
+                <!-- <div style="display: flex; width: 80px;" *ngIf="t?.Status === 6">
+            <div>
+                <ion-icon name="ellipse" style="font-size: 12px;
+                margin-right: 3px;"></ion-icon>
+            </div>
+            <span style="font-size: 12px; font-family: 'Poppins_Regular';">Factoring Generated</span>
+        </div>
+
+        <div style="display: flex; width: 80px;" *ngIf="t?.Status === 7">
+            <div>
+                <ion-icon name="ellipse" style="font-size: 12px;
+                margin-right: 3px;"></ion-icon>
+            </div>
+            <span style="font-size: 12px; font-family: 'Poppins_Regular';">Factoring Paid</span>
+        </div>
+
+        <div style="display: flex; width: 80px;" *ngIf="t?.Status === 8">
+            <div>
+                <ion-icon name="ellipse" style="font-size: 12px;
+                margin-right: 3px;"></ion-icon>
+            </div>
+            <span style="font-size: 12px; font-family: 'Poppins_Regular';">Factoring Rejected</span>
+        </div> -->
+
+        <!-- <div style="display: flex; width: 80px;" *ngIf="t?.Status === 9">
+            <div>
+                <ion-icon name="ellipse" style="font-size: 12px;
+                margin-right: 3px;"></ion-icon>
+            </div>
+            <span style="font-size: 12px; font-family: 'Poppins_Regular';">Tonu</span>
+        </div> -->
+
+
+
+
+            <!-- <div style="display: flex; width: 80px;"  *ngIf="t?.Status === 11">
+        <div>
+            <ion-icon name="ellipse" style="font-size: 12px;
+            margin-right: 3px;"></ion-icon>
+        </div>
+    <span style="font-size: 12px; font-family: 'Poppins_Regular';">Load Detention</span>
+</div> -->
+
+
+
+
+<!-- <div style="display: flex; width: 80px;"  *ngIf="t?.Status === 13">
+    <div>
+        <ion-icon name="ellipse" style="font-size: 12px;
+        margin-right: 3px;"></ion-icon>
+    </div>
+<span style="font-size: 12px; font-family: 'Poppins_Regular';">Load Transient</span>
+</div> -->
+
+<!-- <div style="display: flex; width: 80px;"  *ngIf="t?.Status === 14">
+    <div>
+        <ion-icon name="ellipse" style="font-size: 12px;
+        margin-right: 3px;"></ion-icon>
+    </div>
+<span style="font-size: 12px; font-family: 'Poppins_Regular';">Load Picked Upload Document</span>
+</div> -->
+
+<!-- <div style="display: flex; width: 80px;"  *ngIf="t?.Status === 15">
+    <div>
+        <ion-icon name="ellipse" style="font-size: 12px;
+        margin-right: 3px;"></ion-icon>
+    </div>
+<span style="font-size: 12px; font-family: 'Poppins_Regular';">Load Picked Upload Document Rejected</span>
+</div> -->
+
+<!-- <div style="display: flex; width: 80px;"  *ngIf="t?.Status === 16">
+    <div>
+        <ion-icon name="ellipse" style="font-size: 12px;
+        margin-right: 3px;"></ion-icon>
+    </div>
+<span style="font-size: 12px; font-family: 'Poppins_Regular';">Load Picked Upload Document Approved</span>
+</div> -->
+
+<!-- <div style="display: flex; width: 80px;"  *ngIf="t?.Status === 17">
+    <div>
+        <ion-icon name="ellipse" style="font-size: 12px;
+        margin-right: 3px;"></ion-icon>
+    </div>
+<span style="font-size: 12px; font-family: 'Poppins_Regular';">Load Delivered Upload Document</span>
+</div> -->
+
+
+
+<!-- <div style="display: flex; width: 80px;"  *ngIf="t?.Status === 19">
+    <div>
+        <ion-icon name="ellipse" style="font-size: 12px;
+        margin-right: 3px;"></ion-icon>
+    </div>
+<span style="font-size: 12px; font-family: 'Poppins_Regular';">Load Delivered Upload Document Approved</span>
+</div> -->
+
+<!-- <div style="display: flex; width: 80px;"  *ngIf="t?.Status === 20">
+    <div>
+        <ion-icon name="ellipse" style="font-size: 12px;
+        margin-right: 3px;"></ion-icon>
+    </div>
+<span style="font-size: 12px; font-family: 'Poppins_Regular';">Load Picked Location Arrived</span>
+</div>
+
+<div style="display: flex; width: 80px;"  *ngIf="t?.Status === 21">
+    <div>
+        <ion-icon name="ellipse" style="font-size: 12px;
+        margin-right: 3px;"></ion-icon>
+    </div>
+<span style="font-size: 12px; font-family: 'Poppins_Regular';">Load Picked</span>
+</div> -->
+
+<!-- <div style="display: flex; width: 80px;"  *ngIf="t?.Status === 22">
+    <div>
+        <ion-icon name="ellipse" style="font-size: 12px;
+        margin-right: 3px;"></ion-icon>
+    </div>
+<span style="font-size: 12px; font-family: 'Poppins_Regular';">Load Delivery Location Arrived</span>
+</div>
+
+<div style="display: flex; width: 80px;"  *ngIf="t?.Status === 23">
+    <div>
+        <ion-icon name="ellipse" style="font-size: 12px;
+        margin-right: 3px;"></ion-icon>
+    </div>
+<span style="font-size: 12px; font-family: 'Poppins_Regular';">Load Delivered</span>
+</div> -->
+
+
+
+
+  <!-- Load Delivered Upload  -->
+                    <!-- <img src="../../assets/icon/clock-clr.png" alt="" style="margin-right: 7px;"> -->
+                    <!-- <img src="../../assets/icon/date.png" alt="" style="margin-right: 7px;"> -->
+        <!-- style="background-color: #9e9e9e4f;
+        margin: 10px;
+        border-radius: 7px;" -->

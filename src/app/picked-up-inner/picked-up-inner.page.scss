@@ -1,0 +1,104 @@
+ion-item {
+    --padding-start: 0px;
+}
+
+ion-checkbox {
+    --background-checked: #570FEF;
+    --size: 17px;
+    --checkmark-width: 3px;
+    --border-color-checked: dimgrey;
+    margin-right: 15px;
+    opacity: unset;
+}
+
+.wrapper {
+  width: 330px;
+  font-size: 17px;
+}
+
+.StepProgress {
+  position: relative;
+  padding-left: 45px;
+  list-style: none;
+
+  &::before {
+    display: inline-block;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 15px;
+    width: 10px;
+    height: 100%;
+    border-left: 2px solid #CCC;
+  }
+
+  &-item {
+    position: relative;
+    counter-increment: list;
+
+    &:not(:last-child) {
+      padding-bottom: 20px;
+    }
+
+    &::before {
+      display: inline-block;
+      content: '';
+      position: absolute;
+      left: -30px;
+      height: 100%;
+      width: 10px;
+    }
+
+    &::after {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: -37px;
+      width: 12px;
+      height: 12px;
+      border: 2px solid #CCC;
+      border-radius: 50%;
+      background-color: #FFF;
+    }
+
+    &.is-done {
+      &::before {
+        border-left: 2px solid #DADADA;
+      }
+      &::after {
+        content: "✔";
+        font-size: 10px;
+        color: #FFF;
+        text-align: center;
+        border: 2px solid #570FEF;
+        background-color: #570FEF;
+      }
+    }
+
+    &.current {
+      &::before {
+        border-left: 2px solid #570FEF;
+      }
+
+      &::after {
+        // content: counter(list);
+        content: "✔";
+        padding-top: 1px;
+        width: 19px;
+        height: 18px;
+        top: -4px;
+        left: -40px;
+        font-size: 14px;
+        text-align: center;
+        color: #570FEF;
+        border: 2px solid #570FEF;
+        background-color: white;
+      }
+    }
+  }
+
+  strong {
+    display: block;
+  }
+}

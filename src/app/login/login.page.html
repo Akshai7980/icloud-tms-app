@@ -1,0 +1,67 @@
+<ion-content>
+
+    <div class="main-container">
+
+        <form [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
+
+            <div class="logo-container">
+                <img src="../../assets/logo/icloud2.png" alt="">
+            </div>
+
+            <ion-item lines="none">
+                <ion-icon name="mail-outline" slot="start"></ion-icon>
+                <ion-input placeholder="Email ID" type="email" formControlName="userName" autocapitalize="true"></ion-input>
+            </ion-item>
+
+            <ion-item lines="none">
+                <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+                <ion-input placeholder="Password" type="password" [type]="showPassword ? 'password' : 'text'" formControlName="password" (ionChange)="onPasswordInput($event)"></ion-input>
+                <ion-icon slot="end" [name]="showPassword ? 'eye' : 'eye-off'" (click)="showPassword = !showPassword"></ion-icon>
+            </ion-item>
+
+            <div class="remember-me-container">
+
+                <div class="remember-me-inner">
+                    <ion-checkbox (ionChange)="onCheckRemember($event)" [checked]="isChecked"></ion-checkbox>
+                    <p>Remember Me</p>
+                </div>
+
+            </div>
+
+            <div class="login-button-container">
+                <ion-button shape="round" expand="block" type="submit" [disabled]="this.showLoader">
+                    <ion-label *ngIf="!this.showLoader">
+                        Login
+                    </ion-label>
+                    <ion-label *ngIf="this.showLoader">
+                        <div class="spinner-container">
+                            <ion-spinner></ion-spinner>
+                            Please Wait ...
+                        </div>
+                    </ion-label>
+                </ion-button>
+
+                <div>
+                    <p>Forgot Password?</p>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="version-container">
+        <ion-note>Version: 0.0.1</ion-note>
+    </div>
+
+</ion-content>
+
+<ion-footer class="ion-no-border">
+    <ion-toolbar>
+        <div class="footer-img-container">
+            <img src="../../assets/images/app-images/full-truck.svg" alt="" class="animate__animated animate__lightSpeedInRight animate__delay-2s">
+            <img src="../../assets/images/app-images/man.svg" alt="" class="animate__animated animate__flipInY animate__delay-5s, man-img">
+        </div>
+        <div class="footer-text-container">
+            <h4 class="animate__animated animate__fadeIn animate__delay-4s">Login Here</h4>
+        </div>
+        <img src="../../assets/images/app-images/road.svg" alt="" class="road-img"> </ion-toolbar>
+</ion-footer>

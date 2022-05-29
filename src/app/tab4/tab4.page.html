@@ -1,0 +1,72 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button>
+                <img src="../../assets/images/app-button/menu.svg" alt="">
+            </ion-menu-button>
+        </ion-buttons>
+        <ion-title>payroll</ion-title>
+        <ion-buttons slot="end">
+            <img src="../../assets/images/app-button/back.svg" alt="" (click)="this.common.navCtrl.back()">
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-header class="ion-no-border">
+    <div style="display: flex; align-items: center;">
+        <ion-searchbar placeholder="search by payroll number" [formControl]="searchControl" (ionInput)="searchInput($event)"></ion-searchbar>
+        <img src="../../assets/images/app-button/filter.svg" alt="" style="margin: 0px 10px;" (click)="presentPopover($event)">
+    </div>
+</ion-header>
+
+<ion-content>
+
+    <div *ngIf="searching">
+        <ion-spinner></ion-spinner>
+      </div>
+
+      <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+    <div *ngIf="this.payRolls?.length === 0">
+        <div class="ion-padding custom-skeleton" *ngFor="let s of skeleton;" style="border: 1px solid lightgrey;
+        margin: 10px;
+        border-radius: 7px;">
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+            <ion-skeleton-text animated></ion-skeleton-text>
+            <ion-skeleton-text animated style="width: 88%"></ion-skeleton-text>
+            <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+        </div>
+    </div>
+
+    <div style="margin: 10px;">
+        <ion-list>
+
+            <div style="background: #FFFFFF;
+            box-shadow: 0px 0px 10px rgb(0 0 0 / 15%);
+            border-radius: 10px;
+            padding: 7px; display: flex; align-items: center; justify-content: space-between; margin-top: 8px;" *ngFor="let p of payRolls" (click)="gotoPage(p)" class="animate__animated animate__fadeIn">
+                <div>
+                    <h6 style="margin: 7px 0px; color: #570FEF;"> {{ p?.PayLoadNumber }} </h6>
+                    <p style="margin: 7px 0px;"> {{ p?.Notes }} </p>
+
+                    <p style="margin: 7px 0px; color:#FF8E00; font-size: small;
+                    font-weight: bold;" *ngIf="p?.Status === 1"> Pending </p>
+
+                    <p style="margin: 7px 0px; color: #0A5C49; font-size: small;
+                    font-weight: bold;" *ngIf="p?.Status === 3"> Paid </p>
+
+                </div>
+                <div>
+                    <h4 style="margin: 7px 0px; color: #570FEF; line-height: 27px;
+                    letter-spacing: -0.333333px;">${{ p?.TotalAmount }}/-</h4>
+                </div>
+            </div>
+
+        </ion-list>
+
+    </div>
+
+</ion-content>

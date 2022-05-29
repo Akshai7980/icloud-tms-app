@@ -1,0 +1,89 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button>
+                <img src="../../assets/images/app-button/menu.svg" alt="">
+            </ion-menu-button>
+        </ion-buttons>
+        <ion-title>Payroll</ion-title>
+        <ion-buttons slot="end">
+            <img src="../../assets/images/app-button/back.svg" alt="" (click)="this.common.navCtrl.back()">
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <div style="padding: 15px;">
+        <div style="display: flex; justify-content: space-around;">
+            <div>
+                <h6 style="color: #FF8E00;">BOL NO: 12345</h6>
+                <h6 style="color: #4F4F4F;">Load NO: {{ this.payRollDetails?.PayLoadNumber }}</h6>
+            </div>
+            <div>
+                <p style="color: #000000;">Invoice No</p>
+                <p style="color: #4D4F5C;">#123345566</p>
+                <p style="color: #000000;">Your Payment</p>
+                <h4 style="color: #570FEF;">${{ this.payRollDetails?.TotalAmount }}/-</h4>
+            </div>
+        </div>
+
+        <div style="background: #FFFFFF;
+        box-shadow: 0px 0px 10px rgb(0 0 0 / 15%);
+        border-radius: 10px;">
+
+            <div style="display: flex; padding: 15px; border-bottom: 1px dashed rgba(139, 139, 139, 0.43);">
+                <div>
+                    <p style="color: #000000;">To:</p>
+                </div>
+                <div style="margin-left: 15%;">
+                    <p style="color: #570FEF;"> {{ this.payRollDetails?.PayloadTo }} </p>
+                    <p style="color: #4D4F5C;"> {{ this.payRollDetails?.ToAddressLineOne }} </p>
+                    <p style="color: #4D4F5C;"> {{ this.payRollDetails?.ToAddressLineTwo }} </p>
+                </div>
+            </div>
+
+            <div style="display: flex; padding: 15px;">
+                <div>
+                    <p>From:</p>
+                </div>
+                <div style=" margin-left: 10%;">
+                    <p style="color: #570FEF;"> {{ this.payRollDetails?.PayLoadFrom }} </p>
+                    <p style="color: #4D4F5C;"> {{ this.payRollDetails?.FromAddressLineOne }} </p>
+                    <p style="color: #4D4F5C;"> {{ this.payRollDetails?.FromAddressLineTwo }} </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div style="background: #FFFFFF;
+        box-shadow: 0px 0px 10px rgb(0 0 0 / 15%);
+        border-radius: 10px; padding: 10px; margin-top: 10px;">
+            <!-- <div style="display: flex; align-items: center; justify-content: space-between;">
+                <p style="color: #000000;">Basic Charges</p>
+                <p style="color: #000000;">$400/-</p>
+            </div>
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+                <p style="color: #000000;">Basic Charges</p>
+                <p style="color: #000000;">$400/-</p>
+            </div>
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+                <p style="color: #000000;">Basic Charges</p>
+                <p style="color: #000000;">$400/-</p>
+            </div>
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+                <p style="color: #000000;">Basic Charges</p>
+                <p style="color: #000000;">$400/-</p>
+            </div> -->
+
+            <div>
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <h4 style="color: #570FEF;">Total Gross Amount</h4>
+                    <h4 style="color: #570FEF;">${{ this.payRollDetails?.TotalAmount }}/-</h4>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</ion-content>

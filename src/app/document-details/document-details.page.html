@@ -1,0 +1,57 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button>
+                <img src="../../assets/images/app-button/menu.svg" alt="">
+            </ion-menu-button>
+        </ion-buttons>
+        <ion-title>Document Details</ion-title>
+        <ion-buttons slot="end">
+            <img src="../../assets/images/app-button/back.svg" alt="" (click)="this.common.navCtrl.back()">
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- <div *ngIf="this.allDocuments?.length === 0">
+    <div class="ion-padding custom-skeleton" *ngFor="let s of skeleton;">
+      <ion-skeleton-text animated></ion-skeleton-text>
+        <ion-skeleton-text animated style="height: 350px"></ion-skeleton-text>
+        <ion-skeleton-text animated></ion-skeleton-text>
+    </div>
+</div> -->
+
+  <!-- <div style="padding: 15px; text-align: center;" *ngIf="this.allDocuments?.length !== 0"> -->
+    <div style="padding: 15px; text-align: center;" *ngFor="let f of allDocuments" id="open-modal-image" (click)="openFile(f)">
+        <p> {{ f?.fileName }} </p>
+        <img *ngIf="f?.fileType === 'application/pdf' " src="../../assets/images/PDF.png" alt="" style="    height: 350px;
+        object-fit: cover;">
+      <img *ngIf="f?.fileType === 'image/png' " [src]=" 'data:image/png;base64,' + f?.filePath " alt="" style="    height: 350px;
+      object-fit: cover;">
+
+<img *ngIf="f?.fileType === 'image/jpeg' " [src]=" 'data:image/jpeg;base64,' + f?.filePath " alt="" style="    height: 350px;
+object-fit: cover;">
+    </div>
+  <!-- </div> -->
+
+      <ion-modal trigger="open-modal-image" style="--width: 90%;
+    --height: 50%;
+    --border-radius: 10px;">
+        <ng-template>
+          <ion-content>
+
+            <div style="padding: 15px; text-align: center;">
+              <h2> {{ this.docFile?.fileName }} </h2>
+              <img [src]=" 'data:'+this.docFile?.fileType+';base64' + this.docFile?.filePath " alt="" onerror="this.src=null; this.src='../../assets/images/PDF.png' ">
+
+              <div>
+                <ion-button style="text-transform: none;" shape="round">Download Document</ion-button>
+              </div>
+            </div>
+
+        </ion-content>
+        </ng-template>
+      </ion-modal>
+
+</ion-content>

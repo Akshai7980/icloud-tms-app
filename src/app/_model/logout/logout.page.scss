@@ -1,0 +1,17 @@
+#yes {
+    text-transform: none;
+    --padding-start: 40px;
+    --padding-end: 40px;
+    font-family: 'Poppins_Regular';
+    border: 1px solid black;
+    --color: black;
+    border-radius: 30px;
+}
+
+#no {
+    --background: #570FEF;
+    text-transform: none;
+    --padding-start: 40px;
+    --padding-end: 40px;
+    font-family: 'Poppins_Regular';
+}

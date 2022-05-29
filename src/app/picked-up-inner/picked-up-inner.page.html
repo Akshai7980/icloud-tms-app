@@ -1,0 +1,299 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button>
+          <img src="../../assets/images/app-button/menu.svg" alt="">
+      </ion-menu-button>
+  </ion-buttons>
+    <!-- <ion-title>picked-up-inner</ion-title> -->
+    <ion-buttons slot="end">
+      <img src="../../assets/images/app-button/back.svg" alt="" (click)="this.common.navCtrl.back()">
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-header class="ion-no-border">
+  <div style="display: flex;
+  position: relative;
+  top: 30px;">
+        <div>
+            <img src="../../assets/images/app-images/full-truck.svg" alt="">
+        </div>
+
+        <div style="position: absolute;
+        top: 45%;
+        left: 25%;">
+                    <h4 style="color: #570FEF;
+                    position: relative;
+                    bottom: 42px;
+                    font-size: medium;
+                    font-weight: 600;" class="animate__animated animate__fadeIn animate__delay-2s">Picked up</h4>
+                </div>
+
+      <div>
+          <h6 style="margin: 7px; color: #FF8E00;
+          font-family: 'Poppins_Regular';">BOL No : {{ this.tripDetails?.InvoiceNumber }} </h6>
+          <h6 style="margin: 7px; font-family: 'Poppins_Regular';">Load No : {{ this.tripDetails?.SystemLoadNumber }} </h6>
+      </div>
+  </div>
+  <img src="../../assets/images/app-images/road.svg" alt="" style="width: inherit;">
+</ion-header>
+
+<ion-content>
+
+  <div style="display: flex; align-items: center; justify-content: space-evenly;
+  margin-top: 10px; font-family: 'Poppins_Regular';">
+      <div>
+          <img src="../../assets/icon/date.svg" alt="">
+          <span style="color: #FF8E00;"> {{ this.tripDetails?.DropOffDate | date }} </span>
+      </div>
+
+      <div>
+          <img src="../../assets/icon/clock.svg" alt="">
+          <span style="color: #FF8E00;"> {{ this.tripDetails?.DropOffDate | date:'shortTime' }}</span>
+      </div>
+  </div>
+
+  <div style="padding: 15px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 10px 3px rgb(0 0 0 / 13%);
+    border-radius: 7px;
+    margin: 10px; font-family: 'Poppins_Regular';">
+
+    <div style="display: flex;">
+      <div>
+        <img src="../../assets/icon/step-progress-bar.svg" alt="" style="height: 90px;
+        position: relative;
+        top: 5%;
+        margin-right: 10px;">
+      </div>
+      <div>
+        <div
+          [style]="this.tripDetails.Status === 5 ? 'border-bottom-style: dashed; border-bottom-color: lightgrey;' : '' "
+          style="display: flex;
+        align-items: center;
+        padding: 7px;">
+          <div>
+            <h6 style="margin: 0px; font-family: 'Poppins_Regular';">Pick Up Address:</h6>
+            <p style="margin: 0px; font-size: 15px;
+                line-height: 18px;"> {{ this.tripDetails?.PickUpAddress }} </p>
+            <p style="margin: 0px; font-size: 15px;
+                line-height: 18px;"> {{ this.tripDetails?.PickUpCity }} </p>
+          </div>
+        </div>
+
+        <div *ngIf="this.tripDetails?.Status === 5" style="display: flex;
+        align-items: center;
+        padding: 7px;">
+          <div>
+            <h6 style="margin: 0px; font-family: 'Poppins_Regular';">Drop Off Address:</h6>
+            <p style="margin: 0px; font-size: 15px;
+                line-height: 18px;"> {{ this.tripDetails?.DropOffAddress }} </p>
+            <p style="margin: 0px; font-size: 15px;
+                line-height: 18px;"> {{ this.tripDetails?.DropOffCity }} </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="this.tripDetails?.Status === 5" style="padding: 15px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 10px 3px rgb(0 0 0 / 13%);
+    border-radius: 7px;
+    margin: 10px;" (click)="gotoPage('/trip-status')">
+    <h6>Status</h6>
+
+    <div class="wrapper">
+      <ul class="StepProgress">
+        <li class="StepProgress-item is-done">Picked Up</li>
+        <li class="StepProgress-item is-done">Payroll</li>
+        <li class="StepProgress-item is-done">Complete</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div *ngIf="this.tripDetails?.Status === 7" style="padding: 15px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 10px 3px rgb(0 0 0 / 13%);
+    border-radius: 7px;
+    margin: 10px;" (click)="gotoPage('/trip-status')">
+    <h6>Status</h6>
+
+    <div class="wrapper">
+      <ul class="StepProgress">
+        <li class="StepProgress-item is-done">Picked Up</li>
+        <li class="StepProgress-item is-done">Lumber Fees</li>
+        <li class="StepProgress-item is-done">Detention</li>
+        <li class="StepProgress-item is-done">Cancelled</li>
+        <li class="StepProgress-item is-done">Payroll</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div *ngIf="this.tripDetails?.Status === 10" style="padding: 15px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 10px 3px rgb(0 0 0 / 13%);
+    border-radius: 7px;
+    margin: 10px;" (click)="gotoPage('/trip-status')">
+    <h6>Status</h6>
+
+    <div class="wrapper">
+      <ul class="StepProgress">
+        <li class="StepProgress-item is-done">Picked Up</li>
+        <li class="StepProgress-item is-done">Lumber Fees</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div *ngIf="this.tripDetails?.Status === 11" style="padding: 15px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 10px 3px rgb(0 0 0 / 13%);
+    border-radius: 7px;
+    margin: 10px;" (click)="gotoPage('/trip-status')">
+    <h6>Status</h6>
+
+    <div class="wrapper">
+      <ul class="StepProgress">
+        <li class="StepProgress-item is-done">Picked Up</li>
+        <li class="StepProgress-item is-done">Lumber Fees</li>
+        <li class="StepProgress-item is-done">Detention</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div *ngIf="this.tripDetails?.Status === 12" style="padding: 15px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 10px 3px rgb(0 0 0 / 13%);
+    border-radius: 7px;
+    margin: 10px;" (click)="gotoPage('/trip-status')">
+    <h6>Status</h6>
+
+    <div class="wrapper">
+      <ul class="StepProgress">
+        <li class="StepProgress-item is-done">Picked Up</li>
+        <li class="StepProgress-item is-done">Lumber Fees</li>
+        <li class="StepProgress-item is-done">Detention</li>
+        <li class="StepProgress-item is-done">Cancelled</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div *ngIf="this.tripDetails?.Status === 13" style="padding: 15px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 10px 3px rgb(0 0 0 / 13%);
+    border-radius: 7px;
+    margin: 10px;" (click)="gotoPage('/trip-status')">
+    <h6>Status</h6>
+
+    <div class="wrapper">
+      <ul class="StepProgress">
+        <li class="StepProgress-item is-done">Picked Up</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div *ngIf="this.tripDetails?.Status !== 5 && this.tripDetails?.Status !== 7 &&
+     this.tripDetails?.Status !== 10 && this.tripDetails?.Status !==11 &&
+     this.tripDetails?.Status !== 12 && this.tripDetails?.Status !== 21" style="padding: 15px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 10px 3px rgb(0 0 0 / 13%);
+    border-radius: 7px;
+    margin: 10px;" (click)="gotoPage('/trip-status')">
+    <h6>Status</h6>
+
+    <div class="wrapper">
+      <ul class="StepProgress">
+        <li class="StepProgress-item is-done">Picked Up</li>
+        <li class="StepProgress-item is-done">Lumber Fees</li>
+        <li class="StepProgress-item is-done">Detention</li>
+        <li class="StepProgress-item is-done">Cancelled</li>
+        <li class="StepProgress-item is-done">Payroll</li>
+        <li class="StepProgress-item is-done">Complete</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div style="display: flex; align-items: center; justify-content: space-evenly;">
+      <div style="background-image: linear-gradient(
+          150.51deg, #570FEF 18.06%, rgba(87, 15, 239, 0.67) 95.2%);
+              box-shadow: 0px 0px 10px rgb(0 0 0 / 10%);
+              border-radius: 10px;
+              text-align: center;
+              padding: 15px;
+                width: 90px;
+                font-size: 12px;">
+          <img src="../../assets/icon/weight.svg" alt="">
+          <p style="color: white;
+          margin: 3px;
+          ">Weight</p>
+          <p style="color: white;
+          margin: 3px;
+          font-family: 'Poppins_Regular';"> {{ this.tripDetails?.Weight }} </p>
+      </div>
+
+      <div style="background-image: linear-gradient(
+          150.51deg, #570FEF 18.06%, rgba(87, 15, 239, 0.67) 95.2%);
+              box-shadow: 0px 0px 10px rgb(0 0 0 / 10%);
+              border-radius: 10px;
+              text-align: center;
+              padding: 15px;
+                width: 90px;
+                font-size: 12px;">
+          <img src="../../assets/icon/miles.svg" alt="">
+          <p style="color: white;
+          margin: 3px;
+          font-family: 'Poppins_Regular';">Miles</p>
+          <p style="color: white;
+          margin: 3px;
+          font-family: 'Poppins_Regular';"> {{ this.tripDetails?.Miles }} </p>
+      </div>
+
+      <div style="background-image: linear-gradient(
+          150.51deg, #570FEF 18.06%, rgba(87, 15, 239, 0.67) 95.2%);
+              box-shadow: 0px 0px 10px rgb(0 0 0 / 10%);
+              border-radius: 10px;
+              text-align: center;
+              padding: 15px;
+                width: 90px;
+                font-size: 12px;">
+          <img src="../../assets/icon/package.svg" alt="">
+          <p style="color: white;
+          margin: 3px;
+          font-family: 'Poppins_Regular';">Quantity</p>
+          <p style="color: white;
+          margin: 3px;
+          font-family: 'Poppins_Regular';"> {{ this.tripDetails?.Qunatity }} </p>
+      </div>
+  </div>
+
+  <div style="padding: 15px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 10px 3px rgb(0 0 0 / 13%);
+  border-radius: 7px;
+  margin: 10px;">
+      <h6>Notes</h6>
+      <ol style="padding: 0px 0px 0px 15px;
+      margin: 0px 0px;" *ngIf="this.tripDetails?.Notes">
+          <li style="margin-bottom: 5px;"> {{ this.tripDetails?.Notes | titlecase }} </li>
+      </ol>
+  </div>
+
+  <div style="text-align: center;">
+      <ion-button shape="round" style="--background: #570FEF;
+  --box-shadow: none;
+  text-transform: none;
+  font-family: 'Poppins_Regular';
+  --padding-start: 37px;
+    --padding-end: 37px;
+      " (click)="gotoPage('/confirm-delivery')">Deliver</ion-button>
+  </div>
+
+</ion-content>

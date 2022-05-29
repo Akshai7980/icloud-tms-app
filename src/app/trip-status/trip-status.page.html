@@ -1,0 +1,152 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button>
+                <img src="../../assets/images/app-button/menu.svg" alt="">
+            </ion-menu-button>
+        </ion-buttons>
+        <ion-title>Trip Status</ion-title>
+        <ion-buttons slot="end">
+            <img src="../../assets/images/app-button/back.svg" alt="" (click)="this.common.navCtrl.back()">
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-header class="ion-no-border">
+    <div style="display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: 30px;">
+        <div>
+            <img src="../../assets/images/app-images/Three-quarters-truck.svg" alt="" class="animate__animated animate__fadeInRightBig animate__slower">
+        </div>
+        <div style="position: relative;
+        right: 5%;" class="animate__animated animate__fadeInLeft">
+            <h6 style="margin: 7px; color: #FF8E00;
+            font-family: 'Poppins_Regular';">BOL No : {{ tripDetails?.InvoiceNumber }}</h6>
+            <h6 style="margin: 7px; font-family: 'Poppins_Regular';">Load No : {{ tripDetails?.SystemLoadNumber }}</h6>
+        </div>
+    </div>
+    <img src="../../assets/images/app-images/road.svg" alt="" style="width: inherit;">
+</ion-header>
+
+<ion-content>
+
+    <div style="padding: 15px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 10px 3px rgb(0 0 0 / 13%);
+  border-radius: 7px;
+  margin: 10px;">
+        <h6>Status</h6>
+
+        <div *ngIf="this.tripStatus?.length === 0">
+            <div class="ion-padding custom-skeleton" *ngFor="let s of skeleton;">
+                <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+                <ion-skeleton-text animated></ion-skeleton-text>
+                <ion-skeleton-text animated style="width: 88%"></ion-skeleton-text>
+                <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
+                <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+            </div>
+        </div>
+
+        <div *ngIf="this.tripStatus?.length !== 0">
+
+            <ion-item lines="none" *ngFor="let t of tripStatus">
+                <div>
+                    <p style="width: 70px;"> {{ t?.createdDate | date:'medium' }} </p>
+                </div>
+                <div>
+                    <ion-checkbox mode="ios" checked="true" disabled="true"></ion-checkbox>
+                </div>
+                <div>
+                    <p> {{ t?.notes }} </p>
+                </div>
+            </ion-item>
+
+            <!-- <ion-item lines="none">
+                <div>
+                    <p style="width: 70px;"> {{ this.tripStatus[0]?.createdDate | date:'medium' }} </p>
+                </div>
+                <div>
+                    <ion-checkbox mode="ios" *ngIf="this.tripStatus[0]?.createdDate !== undefined" checked="true" disabled="true"></ion-checkbox>
+                    <ion-checkbox mode="ios" style="margin-bottom: 20px;" *ngIf="this.tripStatus[0]?.createdDate === undefined" disabled="true"></ion-checkbox>
+                </div>
+                <div>
+                    <p> {{ this.tripStatus[0]?.notes }} </p>
+                </div>
+            </ion-item>
+            <ion-item lines="none">
+                <div>
+                    <p style="width: 70px;"> {{ this.tripStatus[1]?.createdDate | date:'medium' }} </p>
+                </div>
+                <div>
+                    <ion-checkbox mode="ios" *ngIf="this.tripStatus[1]?.createdDate !== undefined" checked="true" disabled="true"></ion-checkbox>
+                    <ion-checkbox mode="ios" style="margin-bottom: 20px;" *ngIf="this.tripStatus[1]?.createdDate === undefined" disabled="true"></ion-checkbox>
+                </div>
+                <div>
+                    <p> {{ this.tripStatus[1]?.notes }} </p>
+                </div>
+            </ion-item>
+            <ion-item lines="none">
+                <div>
+                    <p style="width: 70px;"> {{ this.tripStatus[2]?.createdDate | date:'medium' }} </p>
+                </div>
+                <div>
+                    <ion-checkbox mode="ios" *ngIf="this.tripStatus[2]?.createdDate !== undefined" checked="true" disabled="true"></ion-checkbox>
+                    <ion-checkbox mode="ios" style="margin-bottom: 20px;" *ngIf="this.tripStatus[2]?.createdDate === undefined" disabled="true"></ion-checkbox>
+                </div>
+                <div>
+                    <p> {{ this.tripStatus[2]?.notes }} </p>
+                </div>
+            </ion-item>
+            <ion-item lines="none">
+                <div>
+                    <p style="width: 70px;"> {{ this.tripStatus[3]?.createdDate | date:'medium' }} </p>
+                </div>
+                <div>
+                    <ion-checkbox mode="ios" *ngIf="this.tripStatus[3]?.createdDate !== undefined" checked="true" disabled="true"></ion-checkbox>
+                    <ion-checkbox mode="ios" style="margin-bottom: 20px;" *ngIf="this.tripStatus[3]?.createdDate === undefined" disabled="true"></ion-checkbox>
+                </div>
+                <div>
+                    <p> {{ this.tripStatus[3]?.notes }} </p>
+                </div>
+            </ion-item>
+            <ion-item lines="none">
+                <div>
+                    <p style="width: 70px;"> {{ this.tripStatus[4]?.createdDate | date:'medium' }} </p>
+                </div>
+                <div>
+                    <ion-checkbox mode="ios" *ngIf="this.tripStatus[4]?.createdDate !== undefined" checked="true" disabled="true"></ion-checkbox>
+                    <ion-checkbox mode="ios" style="margin-bottom: 20px;" *ngIf="this.tripStatus[4]?.createdDate === undefined" disabled="true"></ion-checkbox>
+                </div>
+                <div>
+                    <p> {{ this.tripStatus[4]?.notes }} </p>
+                </div>
+            </ion-item>
+            <ion-item lines="none">
+                <div>
+                    <p style="width: 70px;"> {{ this.tripStatus[5]?.createdDate | date:'medium' }} </p>
+                </div>
+                <div>
+                    <ion-checkbox mode="ios" *ngIf="this.tripStatus[5]?.createdDate !== undefined" checked="true" disabled="true"></ion-checkbox>
+                    <ion-checkbox mode="ios" style="margin-bottom: 20px;" *ngIf="this.tripStatus[5]?.createdDate === undefined" disabled="true"></ion-checkbox>
+                </div>
+                <div>
+                    <p> {{ this.tripStatus[5]?.notes }} </p>
+                </div>
+            </ion-item> -->
+        </div>
+    </div>
+
+    <div style="text-align: center;">
+        <ion-button shape="round" style="--background: #570FEF;
+        --box-shadow: none;
+        text-transform: none;
+        font-family: 'Poppins_Regular';
+            " (click)="gotoPage('/document-details')" [disabled]="tripStatus?.length === 0">
+            <ion-icon name="eye" slot="start"></ion-icon>
+            <ion-label>View Document</ion-label>
+        </ion-button>
+    </div>
+
+</ion-content>

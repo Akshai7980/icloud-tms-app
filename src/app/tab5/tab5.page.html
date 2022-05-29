@@ -1,0 +1,89 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button>
+                <img src="../../assets/images/app-button/menu.svg" alt="">
+            </ion-menu-button>
+        </ion-buttons>
+        <ion-title>Profile</ion-title>
+        <ion-buttons slot="end">
+            <img src="../../assets/images/app-button/back.svg" alt="" (click)="this.common.navCtrl.back()">
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <!-- <div style="text-align: end;">
+        <ion-button shape="round" style="text-transform: none; --background: #570FEF1A; color: black;
+        --box-shadow: 0px;" (click)="presentPopover($event)">English
+            <ion-icon name="chevron-down-outline" style="margin-left: 5px;"></ion-icon>
+        </ion-button>
+    </div> -->
+
+    <div style="text-align: center;">
+        <div>
+            <img src="../../assets/images/user.png" alt="" style="height: 110px;
+            width: 110px;
+            object-fit: cover;
+            background-color: #556080;
+            border-radius: 50%;
+            padding: 5px;">
+            <!-- <img src="../../assets/images/" alt="" style="position: relative;
+            top: 20px;
+            right: 25px;"> -->
+        </div>
+    </div>
+
+    <div style="margin: 25px; font-size: large;">
+
+        <div>
+            <ion-label style="font-size: 12px;">Your Name</ion-label>
+            <p style="background-color: rgba(87, 15, 239, 0.1);
+            border-radius: 25px;
+            padding: 10px;
+            font-size: 12px;
+            line-height: 18px;
+            font-family: 'Poppins_Regular';
+            height: 40px;
+            color: #4F4F4F;"> {{ this.userDetails?.firstName }}&nbsp;{{ this.userDetails?.lastName }} </p>
+        </div>
+
+        <div>
+            <ion-label style="font-size: 12px;">Email ID</ion-label>
+            <p style="background-color: rgba(87, 15, 239, 0.1);
+            border-radius: 25px;
+            padding: 10px;
+            font-size: 12px;
+            line-height: 18px;
+            font-family: 'Poppins_Regular';
+            height: 40px;
+            color: #4F4F4F;"> {{ this.userDetails?.driverEmail }} </p>
+        </div>
+
+        <div>
+            <ion-label style="font-size: 12px;">Phone No</ion-label>
+            <p style="background-color: rgba(87, 15, 239, 0.1);
+            border-radius: 25px;
+            padding: 10px;
+            font-size: 12px;
+            line-height: 18px;
+            font-family: 'Poppins_Regular';
+            height: 40px;
+            color: #4F4F4F;">+91&nbsp;{{ this.userDetails?.driverPhone }}</p>
+        </div>
+
+        <div>
+            <ion-label style="font-size: 12px;">Licence Number</ion-label>
+            <p style="background-color: rgba(87, 15, 239, 0.1);
+            border-radius: 25px;
+            padding: 10px;
+            font-size: 12px;
+            font-family: 'Poppins_Regular';
+            height: 40px;
+            color: #4F4F4F;"> {{ this.userDetails?.licenceNumber }} </p>
+        </div>
+    </div>
+
+
+</ion-content>

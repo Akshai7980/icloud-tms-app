@@ -1,0 +1,153 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+
+/* Core CSS required for Ionic components to work properly */
+
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+@font-face {
+    font-family: Poppins_Black;
+    src: url("../src/assets/fonts/Poppins-Black.ttf");
+}
+
+@font-face {
+    font-family: Poppins_BlackItalic;
+    src: url("../src/assets/fonts/Poppins-BlackItalic.ttf");
+}
+
+@font-face {
+    font-family: Poppins_Bold;
+    src: url("../src/assets/fonts/Poppins-Bold.ttf");
+}
+
+@font-face {
+    font-family: Poppins_Bold_Italic;
+    src: url("../src/assets/fonts/Poppins-Bolditalic.ttf");
+}
+
+@font-face {
+    font-family: Poppins_Medium;
+    src: url("../src/assets/fonts/Poppins-Medium.ttf");
+}
+
+@font-face {
+    font-family: Poppins_Regular;
+    src: url("../src/assets/fonts/Poppins-Regular.ttf");
+}
+
+// @font-face {
+//     font-family: Poppins_Black;
+//     src: url("../src/assets/fonts/Poppins-Black.ttf");
+// }
+// @font-face {
+//     font-family: Poppins_Black;
+//     src: url("../src/assets/fonts/Poppins-Black.ttf");
+// }
+ion-title {
+    font-family: 'Poppins_Regular';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: -0.333333px;
+    color: #000000;
+}
+
+p {
+  font-family: 'Poppins_Regular';
+}
+
+h1 {
+  font-family: 'Poppins_Regular';
+}
+
+h2 {
+  font-family: 'Poppins_Regular';
+}
+
+h3 {
+  font-family: 'Poppins_Regular';
+}
+
+h4 {
+  font-family: 'Poppins_Regular';
+}
+
+h5 {
+  font-family: 'Poppins_Regular';
+}
+
+h6 {
+  font-family: 'Poppins_Regular';
+}
+
+span {
+  font-family: 'Poppins_Regular';
+}
+
+ion-label {
+  font-family: 'Poppins_Regular';
+}
+
+ion-list-header {
+  font-family: 'Poppins_Regular';
+}
+
+ion-note {
+  font-family: 'Poppins_Regular';
+}
+
+.notification-modal {
+    --width: 90%;
+    --height: 50%;
+    --border-radius: 10px;
+    --background: transparent;
+}
+
+.logout-modal {
+  --width: 90%;
+  --height: 23%;
+  --border-radius: 10px;
+}
+
+ion-searchbar {
+    .searchbar-input-container {
+        .searchbar-input {
+            background: rgba(87, 15, 239, 0.1);
+            border-radius: 5px;
+            box-shadow: 0px 0px 0px 0px;
+        }
+    }
+}
+
+.days-sort-popover {
+    --width: 115px !important;
+}
+
+// ::-webkit-scrollbar {
+//     display: none;
+//   }

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "719489797561",
+    "project_id": "icloudtms-b05d0",
+    "storage_bucket": "icloudtms-b05d0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:719489797561:android:42a8e725e2303da6c97a68",
+        "android_client_info": {
+          "package_name": "com.icloudtms.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "719489797561-79dvll7hmi7a0gnbp97ipihu04hfd6ma.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFepAl2_FHZsfGj4rLZ9xJyq8IWaw5FhE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "719489797561-79dvll7hmi7a0gnbp97ipihu04hfd6ma.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

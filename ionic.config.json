@@ -1,0 +1,10 @@
+{
+  "name": "iCloudTMS",
+  "integrations": {
+    "capacitor": {
+      "enabled": false
+    },
+    "cordova": {}
+  },
+  "type": "angular"
+}

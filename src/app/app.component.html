@@ -1,0 +1,54 @@
+<ion-app>
+    <ion-split-pane contentId="main-content">
+        <ion-menu contentId="main-content" type="overlay" (ionWillOpen)="ionWillOpen($event)">
+            <ion-content>
+
+                <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+                    <ion-refresher-content></ion-refresher-content>
+                </ion-refresher>
+
+                <ion-list id="inbox-list">
+                  <div style="display: flex;
+                  align-items: center;
+                  justify-content: space-between;">
+                    <div style="display: flex;
+                    align-items: center;
+                    margin-bottom: 25px;">
+                        <div style="background-color: #556080;
+                        border-radius: 10px;">
+                            <img src="../assets/images/user.png" alt="" style="height: 50px;
+                            width: 50px;
+                            object-fit: cover;">
+                        </div>
+                        <div>
+                            <ion-list-header> {{ this.userDetails?.firstName }} </ion-list-header>
+                            <ion-note> {{ this.userDetails?.driverEmail }} </ion-note>
+                        </div>
+                    </div>
+                    <div>
+                      <img src="../assets/images/app-button/forward.svg" alt="" (click)="this.menu.close()">
+                  </div>
+                  </div>
+
+
+                    <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+                        <ion-item routerDirection="root" lines="none" detail="false" routerLinkActive="selected" (click)="openPage(i)">
+                            <img slot="start" [src]="p.img" alt="">
+                            <!-- <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon> -->
+                            <ion-label>{{ p.title }}</ion-label>
+                        </ion-item>
+                    </ion-menu-toggle>
+                </ion-list>
+            </ion-content>
+
+            <ion-footer class="ion-no-border">
+                <ion-toolbar style="height: 85px;">
+                    <div style="position: relative; left: 10%;">
+                        <img src="../assets/logo/icloud2.png" alt="" style="width: 45%;">
+                    </div>
+                </ion-toolbar>
+            </ion-footer>
+        </ion-menu>
+        <ion-router-outlet id="main-content"></ion-router-outlet>
+    </ion-split-pane>
+</ion-app>

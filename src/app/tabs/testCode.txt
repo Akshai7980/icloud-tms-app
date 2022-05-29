@@ -1,0 +1,18 @@
+// ion-tab-button.tab-selected {
+//     --background: rgba(87, 15, 239, 0.1) !important;
+//     --color-selected: var(--ion-color-light);
+//   }
+
+
+// ion-tab-bar {
+//     --background: #570FEF;
+//     ion-tab-button {
+//         ion-icon {
+//             color: white;
+//         }
+//         ion-label {
+//             color: white;
+//             font-family: 'Poppins_Regular';
+//         }
+//     }
+// }

@@ -1,0 +1,122 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button>
+        <img src="../../assets/images/app-button/menu.svg" alt="">
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-title> Trips </ion-title>
+    <ion-buttons slot="end">
+      <img src="../../assets/images/app-button/back.svg" alt="" (click)="this.common.navCtrl.back()">
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-header class="ion-no-border">
+  <ion-searchbar type="number" placeholder="search by load number" [formControl]="searchControl"
+    (ionInput)="searchInput($event)"></ion-searchbar>
+</ion-header>
+
+<ion-content>
+
+  <div *ngIf="searching">
+    <ion-spinner></ion-spinner>
+  </div>
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div *ngIf="this.allTrips?.length === 0">
+
+    <div class="ion-padding custom-skeleton" *ngFor="let s of skeleton;" style="border: 1px solid lightgrey;
+        margin: 10px;
+        border-radius: 7px;">
+      <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+      <ion-skeleton-text animated></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 88%"></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+    </div>
+  </div>
+
+  <div style="display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 7px;
+    margin-bottom: 15px;
+    box-shadow: 1px 1px 5px 1px lightgrey;
+    border-radius: 7px;" (click)="gotoPage('/trip-detail', t)" *ngFor="let t of allTrips"
+    class="animate__animated animate__fadeIn">
+    <div>
+      <p style="margin: 0px 0px 7px 0px;
+            color: #570fef; font-family: 'Poppins_Regular';"> {{ t?.SystemLoadNumber }} </p>
+      <div style="font-size: 15px;
+            margin-bottom: 7px;
+            display: flex; align-items: baseline;">
+        <p style="margin: 0px 5px 0px 0px; font-family: 'Poppins_Regular';"> From: </p>
+        <span style="font-size: 15px;
+                margin-right: 7px; font-family: 'Poppins_Regular'; color: #4F4F4F;"> {{ t?.PickUpAddress }} </span>
+
+        <p style="margin: 0px 5px 0px 0px; font-family: 'Poppins_Regular';" *ngIf="t?.Status === 5"> To: </p>
+        <span style="font-size: 15px;
+                margin-right: 7px; font-family: 'Poppins_Regular'; color: #4F4F4F;" *ngIf="t?.Status === 5"> {{
+          t?.DropOffAddress }} </span>
+      </div>
+
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+        <div style="display: flex;
+                align-items: center;">
+          <ion-icon name="calendar-outline" style="color: #570fef;
+margin-right: 5px;"></ion-icon>
+          <span style="font-size: 15px; font-family: 'Poppins_Regular'; color: #4F4F4F;"> {{ t?.PickUpDate | date }}
+          </span>
+        </div>
+
+        <div style="display: flex;
+                align-items: center;" [style]=" t.Status !== 5 ? ' position: relative; left: 70px;' : '' ">
+          <ion-icon name="time-outline" style="color: #570fef;
+margin-right: 5px;"></ion-icon>
+          <span style="font-size: 15px; font-family: 'Poppins_Regular'; color: #4F4F4F;"> {{ t?.PickUpDate |
+            date:'shortTime' }} </span>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="display: flex; width: 80px; color: #0A5C49;" *ngIf="t?.Status === 5">
+      <div>
+        <ion-icon name="ellipse" style="font-size: 12px;
+                margin-right: 3px;"></ion-icon>
+      </div>
+      <span style="font-size: 12px; font-family: 'Poppins_Regular';">Completed</span>
+    </div>
+
+    <div style="display: flex; width: 80px; color: #FF8E00;" *ngIf="t?.Status === 10">
+      <div>
+        <ion-icon name="ellipse" style="font-size: 12px;
+                margin-right: 3px;"></ion-icon>
+      </div>
+      <span style="font-size: 12px; font-family: 'Poppins_Regular';">Lumper Fees</span>
+    </div>
+
+    <div style="display: flex; width: 80px; color: #C71F16" *ngIf="t?.Status === 12">
+      <div>
+        <ion-icon name="ellipse" style="font-size: 12px;
+        margin-right: 3px;"></ion-icon>
+      </div>
+      <span style="font-size: 12px; font-family: 'Poppins_Regular';">Cancelled</span>
+    </div>
+
+    <div style="display: flex; width: 80px;" *ngIf="t?.Status === 18">
+      <div>
+        <ion-icon name="ellipse" style="font-size: 12px;
+        margin-right: 3px;"></ion-icon>
+      </div>
+      <span style="font-size: 12px; font-family: 'Poppins_Regular';">
+        Document Rejected</span>
+    </div>
+
+  </div>
+
+</ion-content>

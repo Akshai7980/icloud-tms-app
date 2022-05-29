@@ -1,0 +1,72 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button>
+                <img src="../../assets/images/app-button/menu.svg" alt="">
+            </ion-menu-button>
+        </ion-buttons>
+        <ion-title>Support</ion-title>
+        <ion-buttons slot="end">
+            <img src="../../assets/images/app-button/back.svg" alt="" (click)="this.common.navCtrl.back()">
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <div style="text-align: center;
+    margin-top: 60%;" *ngIf="this.contactInfo?.length === 0">
+        <ion-spinner name="crescent"></ion-spinner>
+    </div>
+
+    <div style="margin: 25px; font-size: large;
+    font-family: 'Poppins_Regular';" *ngIf="this.contactInfo?.length !== 0" class="animate__animated animate__fadeIn">
+
+        <div style="text-align: center;
+    margin: 10% 0%;">
+            <img src="../../assets/logo/icloud2.png" alt="" style="width: 55%;">
+        </div>
+
+        <div>
+            <ion-label style="font-size: 12px;">WhatsApp</ion-label>
+            <p style="background-color: rgba(87, 15, 239, 0.1);
+            border-radius: 25px;
+            height: 40px;
+            font-size: 12px;
+            padding: 10px;
+            font-family: 'Poppins_Regular';
+            font-size: 15px;
+            color: #4F4F4F;
+            line-height: 18px;"> {{ this.contactInfo[0]?.Value }} </p>
+        </div>
+
+        <div>
+            <ion-label style="font-size: 12px;">Email ID</ion-label>
+            <p style="background-color: rgba(87, 15, 239, 0.1);
+            border-radius: 25px;
+            height: 40px;
+            font-size: 12px;
+            font-family: 'Poppins_Regular';
+            padding: 10px;
+            font-size: 15px;
+            color: #4F4F4F;
+            line-height: 18px;"> {{ this.contactInfo[1]?.Value }} </p>
+        </div>
+
+        <div>
+            <ion-label style="font-size: 12px;">Phone No</ion-label>
+            <p style="background-color: rgba(87, 15, 239, 0.1);
+            border-radius: 25px;
+            height: 40px;
+            font-size: 12px;
+            font-family: 'Poppins_Regular';
+            padding: 10px;
+            font-size: 15px;
+            color: #4F4F4F;
+            line-height: 18px;">+91 &nbsp; {{ this.contactInfo[2]?.Value }} </p>
+        </div>
+
+    </div>
+
+
+</ion-content>
